@@ -78,15 +78,15 @@ while True:
     while not palavra_adivinhada and len(letras_erradas) < tentativas:
         letra = input("\nDigite uma letra: ").lower()
     
-        if letra in letras_certas: # letra já foi
+        if letra in letras_certas:
             print("Você já tentou essa letra. Tente outra.")
             time.sleep(1)
-        elif letra in palavra: # letra certa
+        elif letra in palavra: 
             letras_certas.append(letra)
         elif letra in letras_erradas:
             print("Você já tentou essa letra. Tente outra.")
             time.sleep(1)
-        else: # letra errada
+        else:
             letras_erradas.append(letra)
     
         atualizar_tela()
