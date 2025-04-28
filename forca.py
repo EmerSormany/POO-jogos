@@ -10,10 +10,7 @@ Jogo da Forca
 '''
 
 import time
-# 7 letras, 6 letras diferentes
- 
-# letras_adivinhadas = []
-# alfabeto = 'abcdefghijlmopqrstuvwxyz'
+
 letras_erradas = []
 letras_certas = []
 categorias = {'animais': ['cachorro', 'gato', 'elefante', 'leão', 'tigre'],
@@ -57,7 +54,6 @@ def tratar_palavra(palavra):
     )
 
 def atualizar_tela():
-    # global alfabeto
     limpar_tela()
     print("Bem-vindo ao Jogo da Forca!")
     print(f"{tentativas-len(letras_erradas)} tentativas restantes.")
@@ -68,16 +64,7 @@ def atualizar_tela():
         else:
             print("_", end=" ")
     print("\n")
-    # alfabeto = atualiza_alfabeto('abcdefghijlmopqrstuvwxyz')
     return
-    
-# def atualiza_alfabeto(alfabeto):
-#     # melhorar esse código, considerar espaços entre as letras
-#     for letra in alfabeto:
-#         if letra in letras_certas:
-#             index = alfabeto.index(letra)
-#             alfabeto = alfabeto[:index] + letra.upper() + alfabeto[index+1:]
-#     return alfabeto
     
 while True:
     palavra = escolher_categoria()
@@ -89,7 +76,6 @@ while True:
     palavra_adivinhada = False
 
     while not palavra_adivinhada and len(letras_erradas) < tentativas:
-        # print(alfabeto)
         letra = input("\nDigite uma letra: ").lower()
     
         if letra in letras_certas: # letra já foi
